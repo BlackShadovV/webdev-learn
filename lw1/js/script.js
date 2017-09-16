@@ -12,7 +12,7 @@ for (i = 0; i < N; i++) {
 
 alert("Filled random array " + a.join(' '));
 
-k = getRandomInt(0, 15);
+var k = prompt('Введите число для поиска', '');
 for (i = 0; i < N; i++) {
     if (a[i] == k) {
         isFound = true;
