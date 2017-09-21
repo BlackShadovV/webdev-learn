@@ -1,45 +1,38 @@
 program SearchRndElementInRndArray;
-uses crt;
-const N = 10;
+uses Crt;
+const Arrlen = 10;
 var
-  a: array [1..N] of integer;
-  k: integer;
-  isFound: boolean;
+  Arr: Array [1..Arrlen] of integer;
+  Key: integer;
+  IsFound: boolean;
   i: integer;
 begin
   randomize;
-
-  for i := 1 to N do 
+  for i := 1 to Arrlen do 
   begin
-    a[i] := Random(15);
+    Arr[i] := Random(15);
   end;
-  
-  writeln('Filled random array: ');
-  for i := 1 to N do
+  writeln('Filled random Array: ');
+  for i := 1 to Arrlen do
   begin
-    write(a[i], ' ');
+    write(Arr[i], ' ');
   end;  
-  
-  writeln;  
- 
-  k := Random(15);
- 
+  Key := Random(15);
   IsFound := False;
-  for i:=1 to N do
+  for i:=1 to Arrlen do
   begin
-    if a[i] = k then 
+    if Arr[i] = Key then 
     begin
       IsFound := True;
       break;
     end;
   end;
- 
   if IsFound then
   begin
-    writeln('Element ', k, ' is found!');
+    writeln('Element ', Key, ' is found!');
   end  
   else
   begin
-    writeln('Element ', k, ' not found');
+    writeln('Element ', Key, ' not found');
   end;  
 end.
