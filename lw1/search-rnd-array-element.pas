@@ -1,13 +1,17 @@
 program SearchRndElementInRndArray;
 uses Crt;
+
 const Arrlen = 10;
 var
   Arr: Array [1..Arrlen] of integer;
   Key: integer;
   IsFound: boolean;
   i: integer;
+
 begin
+
   randomize;
+
   for i := 1 to Arrlen do 
   begin
     Arr[i] := Random(15);
@@ -17,6 +21,7 @@ begin
   begin
     write(Arr[i], ' ');
   end;  
+
   Key := Random(15);
   IsFound := False;
   for i:=1 to Arrlen do
@@ -27,6 +32,7 @@ begin
       break;
     end;
   end;
+  
   if IsFound then
   begin
     writeln('Element ', Key, ' is found!');
