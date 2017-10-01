@@ -1,0 +1,33 @@
+a:link,
+a:visited {
+  color: #05c;
+  text-decoration: none;
+  outline: none
+}
+
+a:hover {
+  text-decoration: underline
+}
+
+.b-page {
+  width: 100%;
+  margin: 0;
+  font-family: "Roboto", Helvetica, Arial;
+  font-size: 14px;
+  width: 50%;
+}
+
+.b-menu {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+}
+
+.b-text table td {
+  border-bottom: 1px solid #dfdfdf;
+  margin: 0;
+  padding: 8px 16px 9px 0;
+  width: 50%;
+}
