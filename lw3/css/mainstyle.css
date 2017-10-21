@@ -11,9 +11,8 @@
 }
 
 .registration {
-  padding-top: 15px;
-  width: 256px;
-  height: 205px;
+  width: 360px;
+  height: 300px;
   background-color: #96C6E6;
   display: block;
   border-radius: 8px;
@@ -26,10 +25,29 @@
 }
 
 .RegTitle {
-  font-size: 1.15em;
+  font-size: 1.3em;
   text-align: center;
 }
 
 .regButton {
   cursor: pointer;
+  height: 30px;
+  width: 200px;
+  border-radius: 13px;
+  font-size: 1.05em;
+}
+
+.login,
+.password,
+.confirmPassword {
+  font-size: 1.1em;
+  height: 30px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.check {
+  margin-top: -10px;
+  margin-bottom: -15px;
+  font-size: 1.2em;
 }

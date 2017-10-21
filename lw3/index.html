@@ -4,18 +4,21 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="css/mainstyle.css" />
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
   <title>Лабораторная работа №3</title>
 </head>
 
 <body class="main">
-  <form class="registration" onsubmit="main()">
+  <form class="registration">
     <p class="RegTitle">Регистрация</p>
     <div class="inputfield">
       <input class="login" placeholder="Введите адрес" type="text">
       <input class="password" placeholder="Пароль" type="password">
       <input class="confirmPassword" placeholder="Подтвердите пароль" type="password">
-      <input class="check" type="checkbox">
-      <label>Согласен с правилами сайта </label>
+      <label class="check">
+        <p><input type="checkbox" value="Согласен с правиалми" > Согласен с правилами</P>
+      </label>
+
       <p><input class="regButton" type="submit" value="Регистрация"></p>
     </div>
     <script src="js/verification.js"></script>
