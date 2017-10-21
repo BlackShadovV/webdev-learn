@@ -1,0 +1,35 @@
+.main {
+  background-image: linear-gradient(to right, #648880, #293f50);
+  width: 98%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+
+.registration {
+  padding-top: 15px;
+  width: 256px;
+  height: 205px;
+  background-color: #96C6E6;
+  display: block;
+  border-radius: 8px;
+}
+
+.inputfield {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.RegTitle {
+  font-size: 1.15em;
+  text-align: center;
+}
+
+.regButton {
+  cursor: pointer;
+}
