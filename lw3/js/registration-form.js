@@ -37,7 +37,9 @@ function registration() {
   var email = document.getElementsByClassName("login")[0].value;
   var pass = document.getElementsByClassName("password")[0].value;
   var passConfirm = document.getElementsByClassName("confirmPassword")[0].value;
+  localStorage.setItem('mail', email);
   if (mailCheck(email) && passCheck(pass, passConfirm) && checkRules()) {
+    localStorage.removeItem('mail');
     alert("регистрация прошла успешно");
   } else {
     switch (errorNumber) {
@@ -63,4 +65,5 @@ function registration() {
 
 window.onload = function() {
   document.getElementById('registration').addEventListener('submit', registration);
+  document.getElementsByClassName('login')[0].value = localStorage.getItem('mail');
 }
