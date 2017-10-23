@@ -30,9 +30,6 @@ function checkRules() {
   return true;
 }
 
-
-
-
 function registration() {
   var email = document.getElementsByClassName("login")[0].value;
   var pass = document.getElementsByClassName("password")[0].value;
