@@ -1,33 +1,56 @@
-a:link,
-a:visited {
-  color: #05c;
-  text-decoration: none;
-  outline: none
-}
-
-a:hover {
-  text-decoration: underline
-}
-
-.b-page {
-  width: 100%;
-  margin: 0;
-  font-family: "Roboto", Helvetica, Arial;
-  font-size: 14px;
-  width: 50%;
-}
-
-.b-menu {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  display: table;
-  table-layout: fixed;
-}
-
-.b-text table td {
-  border-bottom: 1px solid #dfdfdf;
-  margin: 0;
-  padding: 8px 16px 9px 0;
-  width: 50%;
-}
+        a:link,
+      a:visited {
+        color: #05c;
+        text-decoration: none;
+        outline: none
+      }
+      
+      a:hover {
+        text-decoration: underline
+      }
+      
+      .b-page__top-line {
+        grid-area: "header";
+      }
+      
+      .b-content {
+        grid-area: "content";
+      }
+      
+      .b-footer {
+        grid-area: "footer";
+      }
+      
+      .b-page {
+        display: grid;
+        grid-template-areas: "header header" "content content" "footer footer";
+        font-family: "Roboto", Helvetica, Arial, sans-serif !important;
+      }
+      
+      .b-title {
+        font-size: 1.5em;
+        line-height: 1.12em;
+      }
+      
+      .b-menu .b-legal-caption {
+        font-size: 1.15em;
+      }
+      
+      .b-text {
+        max-width: 50%;
+        font-size: 0.825em;
+      }
+      
+      .b-menu {
+        .main-header {
+          max-width: 60%;
+        }
+        .b-head__title {
+          font-size: 1.75em;
+          font-weight: bold;
+          line-height: 1.3em;
+        }
+        @font-face {
+          font-family: Roboto;
+          src: url(fonts/Roboto-Regular.ttf);
+        }
