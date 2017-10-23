@@ -30,15 +30,18 @@ function checkRules() {
   return true;
 }
 
-
-
-
 function registration() {
   var email = document.getElementsByClassName("login")[0].value;
   var pass = document.getElementsByClassName("password")[0].value;
   var passConfirm = document.getElementsByClassName("confirmPassword")[0].value;
+  localStorage.setItem("email", JSON.stringify(email));
+  localStorage.setItem("password", JSON.stringify(pass));
+  localStorage.setItem("passConfirm", JSON.stringify(passConfirm));
   if (mailCheck(email) && passCheck(pass, passConfirm) && checkRules()) {
     alert("регистрация прошла успешно");
+    localStorage.removeItem("email");
+    localStorage.removeItem("password");
+    localStorage.removeItem("passConfirm");
   } else {
     switch (errorNumber) {
       case 1:
