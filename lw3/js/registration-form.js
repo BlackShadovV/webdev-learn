@@ -1,66 +1,33 @@
-var errorNumber = 0
-
-function mailCheck(mail) {
+function validateForm(password, passwordConfirm, mail) {
+  var check = document.getElementsByClassName('check')[0].checked;
   var mask = mail.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
   if (!mask) {
-    errorNumber = 1;
-    return false;
-  }
-  return true;
+    return 'Некорректный E-mail';
+  } else if (password.length < 6) {
+    return 'Пароль короткий';
+  } else if (password != passwordConfirm) {
+    return 'Пароли не совпадают';
+  } else if (!check) {
+    return 'Примите соглашение';
+  } else {
+    return true;
+  };
 }
 
-function passCheck(password, passwordConfirm) {
-  if (password.length < 6) {
-    errorNumber = 2;
-    return false;
-  }
-  if (password != passwordConfirm) {
-    errorNumber = 3;
-    return false;
-  }
-  return true;
-}
+function registration(event) {
 
-function checkRules() {
-  var check = document.getElementsByClassName("check")[0].checked;
-  if (!check) {
-    errorNumber = 4;
-    return false;
-  }
-  return true;
-}
-
-function registration() {
-  var email = document.getElementsByClassName("login")[0].value;
+  var mail = document.getElementsByClassName("login")[0].value;
   var pass = document.getElementsByClassName("password")[0].value;
   var passConfirm = document.getElementsByClassName("confirmPassword")[0].value;
-  localStorage.setItem('mail', email);
-  if (mailCheck(email) && passCheck(pass, passConfirm) && checkRules()) {
-    localStorage.removeItem('mail');
-    alert("регистрация прошла успешно");
+  var validateResult = validateForm(pass, passConfirm, mail);
+  if (validateResult === true) {
+    alert("Регистрация прошла успешно!");
   } else {
-    switch (errorNumber) {
-      case 1:
-        errorMessage = 'Некорректный E-mail';
-        break;
-      case 2:
-        errorMessage = 'Короткий пароль';
-        break;
-      case 3:
-        errorMessage = 'Пароли не совпадают';
-        break;
-      case 4:
-        errorMessage = 'Примите соглашение';
-        break;
-      default:
-        errorMessage = 'Что-то пошло не так';
-        break;
-    }
-    alert(errorMessage);
+    alert(validateResult);
+    event.preventDefault();
   }
 }
 
 window.onload = function() {
   document.getElementById('registration').addEventListener('submit', registration);
-  document.getElementsByClassName('login')[0].value = localStorage.getItem('mail');
 }
